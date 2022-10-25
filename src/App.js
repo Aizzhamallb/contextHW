@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import BlocksContextProvider from "./context";
+import AddForm from "./components/AddForm";
+import Show from "./components/Show";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BlocksContextProvider>
+      <AddForm />
+      <Show />
+    </BlocksContextProvider>
   );
-}
+};
 
 export default App;
+
+// Создать проект и очистить его, добавить в проект 2 компонента, первый компонент будет представлять из себя 3 инпута(высота, ширина и цвет блока) и кнопку сохранить, второй компонент должен используя эти данные отрисовать этот самый компонент, при нажатии на кнопку 'сохранить' на экране должен отобразиться блок с заданными параметрами, использовать контекст, хранить в нем состояния для блока и функции, которые должны менять эти состояния, оба компонента отобразить на странице, залить в гитхаб, прикрепить ссылку в классрум
